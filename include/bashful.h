@@ -5,8 +5,11 @@
 class Bashful
 {
 public:
-    Bashful();
+    Bashful(int x, int y);
     ~Bashful();
 
-    void draw(int x, int y);
+    void draw();
+
+private:
+    int x, y;
 };

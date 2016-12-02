@@ -1,13 +1,15 @@
 #include "speedy.h"
 
-Speedy::Speedy()
+Speedy::Speedy(int x, int y)
 {
+    this->x = x;
+    this->y = y;
 }
 
 Speedy::~Speedy()
 {
 }
 
-void Speedy::draw(int x, int y)
+void Speedy::draw()
 {
 }

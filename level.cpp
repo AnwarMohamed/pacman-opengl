@@ -13,10 +13,10 @@ Level::Level(char* map, int maxX, int maxY)
     this->maxX = maxX;
     this->maxY = maxY;
 
-    bashful = new Bashful();
-    pokey = new Pokey();
-    shadow = new Shadow();
-    speedy = new Speedy();
+    bashful = new Bashful(0, 0);
+    pokey = new Pokey(0, 0);
+    shadow = new Shadow(0, 0);
+    speedy = new Speedy(0, 0);
 }
 
 void Level::prepare()

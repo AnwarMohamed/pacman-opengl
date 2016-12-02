@@ -1,13 +1,15 @@
 #include "shadow.h"
 
-Shadow::Shadow()
+Shadow::Shadow(int x, int y)
 {
+    this->x = x;
+    this->y = y;    
 }
 
 Shadow::~Shadow()
 {
 }
 
-void Shadow::draw(int x, int y)
+void Shadow::draw()
 {
 }

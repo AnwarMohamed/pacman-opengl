@@ -5,8 +5,11 @@
 class Shadow
 {
 public:
-    Shadow();
+    Shadow(int x, int y);
     ~Shadow();
 
-    void draw(int x, int y);
+    void draw();
+
+private:
+    int x, y;
 };

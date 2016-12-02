@@ -5,8 +5,11 @@
 class Pokey
 {
 public:
-    Pokey();
+    Pokey(int x, int y);
     ~Pokey();
 
-    void draw(int x, int y);
+    void draw();
+
+private:
+    int x, y;
 };

@@ -1,13 +1,15 @@
 #include "pokey.h"
 
-Pokey::Pokey()
+Pokey::Pokey(int x, int y)
 {
+    this->x = x;
+    this->y = y;    
 }
 
 Pokey::~Pokey()
 {
 }
 
-void Pokey::draw(int x, int y)
+void Pokey::draw()
 {
 }

@@ -5,8 +5,11 @@
 class Speedy
 {
 public:
-    Speedy();
+    Speedy(int x, int y);
     ~Speedy();
+    
+    void draw();
 
-    void draw(int x, int y);
+private:
+    int x, y;
 };
