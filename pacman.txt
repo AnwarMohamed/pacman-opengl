@@ -1,0 +1,1 @@
+./Debug/main.cpp.o ./Debug/food.cpp.o ./Debug/maze.cpp.o ./Debug/pacman.cpp.o ./Debug/wall.cpp.o
