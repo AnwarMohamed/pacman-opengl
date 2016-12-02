@@ -29,8 +29,6 @@ public:
     void onMove(int key, int x, int y);
     
 private:
-    Food* food;
-    Wall* wall;
     Pacman* pacman;    
     Level* level;    
     
@@ -38,5 +36,6 @@ private:
     ifstream mapFile;
     string mapPath;
     
-    MazeSounds* sounds;
+    Sounds* sounds;
+    Images* images;
 };

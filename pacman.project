@@ -16,6 +16,12 @@
     <File Name="sounds.cpp"/>
     <File Name="images.cpp"/>
     <File Name="level.cpp"/>
+    <VirtualDirectory Name="ghosts">
+      <File Name="bashful.cpp"/>
+      <File Name="pokey.cpp"/>
+      <File Name="shadow.cpp"/>
+      <File Name="speedy.cpp"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
     <File Name="include/food.h"/>
@@ -26,6 +32,12 @@
     <File Name="include/sounds.h"/>
     <File Name="include/images.h"/>
     <File Name="include/level.h"/>
+    <VirtualDirectory Name="ghosts">
+      <File Name="include/bashful.h"/>
+      <File Name="include/pokey.h"/>
+      <File Name="include/shadow.h"/>
+      <File Name="include/speedy.h"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

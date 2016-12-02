@@ -8,13 +8,12 @@ using namespace std;
 
 Pacman::Pacman()
 {
-    x = 16;
+    x = 15;
     y = 11;
 
     lives = 3;
     score = 0;
-    direction = 0;
-    lastDirection = 0;
+    direction = -1;    
 
     //    int width, height;
     //    unsigned char* image = SOIL_load_image("../media/pacman.png", &width, &height, 0, SOIL_LOAD_RGB);
@@ -55,10 +54,18 @@ void Pacman::draw()
     glPopMatrix();
 }
 
+void Pacman::setImages(Images* images)
+{
+    this->images = images;
+}
+
+void Pacman::setSounds(Sounds* sounds)
+{
+    this->sounds = sounds;
+}
+
 void Pacman::onMove(int key, int x, int y)
 {
-    cout << key << endl;
-
     switch (key) {
     case GLUT_KEY_LEFT:
         direction = 0;
@@ -79,8 +86,6 @@ void Pacman::update(char* map, int maxX, int maxY)
 {
     int newX = getNextX() - 5;
     int newY = getNextY() - 5;
-
-    //    cout << "X:" << newX << " Y:" << newY << endl;
 
     move = true;
 
@@ -109,9 +114,6 @@ void Pacman::update(char* map, int maxX, int maxY)
             y -= 1;
             break;
         }
-
-        lastDirection = direction;
-        direction = -1;
     }
 }
 

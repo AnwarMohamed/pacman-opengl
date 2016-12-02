@@ -7,13 +7,11 @@
 class Pacman
 {
 public:
-    Pacman(Images* images, Sounds* sounds);
+    Pacman();
     ~Pacman();
 
     int x, y;
-
-    int direction;
-    int lastDirection;
+    int direction;    
 
     int lives, score;
     bool move;
@@ -22,6 +20,7 @@ public:
     void update(char* map, int maxX, int maxY);
 
     void onMove(int key, int x, int y);
+    
     void setSounds(Sounds* sounds);
     void setImages(Images* images);
 

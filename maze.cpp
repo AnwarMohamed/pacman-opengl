@@ -10,12 +10,15 @@ Maze::Maze()
     sounds = new Sounds();
     images = new Images();
 
-    pacman = new Pacman(images, sounds);
-    wall = new Wall();
-    food = new Food();
+    pacman = new Pacman();
+    pacman->setImages(images);
+    pacman->setSounds(sounds);
 
     map = new char[MAZE_MAX_X * MAZE_MAX_Y];
-    level = new Level();
+
+    level = new Level(map, MAZE_MAX_X, MAZE_MAX_Y);
+    level->setImages(images);
+    level->setSounds(sounds);
 }
 
 bool Maze::load(string path)
@@ -31,26 +34,23 @@ bool Maze::reset()
     if (!mapFile.is_open())
         return false;
 
-    for (int y = 0; y < MAZE_MAX_Y; y++) {
-        for (int x = 0; x < MAZE_MAX_X; x++) {
+    for (int y = 0; y < MAZE_MAX_Y; y++)
+        for (int x = 0; x < MAZE_MAX_X; x++)
             mapFile >> *(map + (y * MAZE_MAX_X) + x);
-            cout << *(map + (y * MAZE_MAX_X) + x);
-        }
-        cout << endl;
-    }
 
     mapFile.close();
 
-    level.reset();
+    level->reset();
     return true;
 }
 
 Maze::~Maze()
 {
     delete pacman;
-    delete wall;
-    delete food;
     delete map;
+    delete level;
+    delete sounds;
+    delete images;
 }
 
 void Maze::draw()
@@ -58,24 +58,7 @@ void Maze::draw()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    for (int y = 0; y < MAZE_MAX_Y; y++) {
-        for (int x = 0; x < MAZE_MAX_X; x++) {
-
-            glPushMatrix();
-
-            switch (*(map + (y * MAZE_MAX_X) + x)) {
-            case 'w':
-                wall->draw(x, y);
-                break;
-            case 'f':
-                food->draw(x, y);
-                break;
-            }
-
-            glPopMatrix();
-        }
-    }
-
+    level->draw();
     pacman->draw();
 }
 
