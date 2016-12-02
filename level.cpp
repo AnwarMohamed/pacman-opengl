@@ -7,16 +7,20 @@ Level::Level(char* map, int maxX, int maxY)
     level = 0;
 
     wall = new Wall();
-    food = new Food();   
+    food = new Food();
 
     this->map = map;
     this->maxX = maxX;
     this->maxY = maxY;
+
+    bashful = new Bashful();
+    pokey = new Pokey();
+    shadow = new Shadow();
+    speedy = new Speedy();
 }
 
 void Level::prepare()
 {
-    
 }
 
 void Level::setImages(Images* images)
@@ -57,5 +61,10 @@ void Level::draw()
 Level::~Level()
 {
     delete wall;
-    delete food;    
+    delete food;
+
+    delete bashful;
+    delete pokey;
+    delete shadow;
+    delete speedy;
 }

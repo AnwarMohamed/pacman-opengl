@@ -5,6 +5,11 @@
 #include "food.h"
 #include "wall.h"
 
+#include "bashful.h"
+#include "pokey.h"
+#include "shadow.h"
+#include "speedy.h"
+
 class Level
 {
 public:
@@ -24,6 +29,11 @@ private:
 
     Food* food;
     Wall* wall;
+
+    Bashful* bashful;
+    Pokey* pokey;
+    Shadow* shadow;
+    Speedy* speedy;
 
     char* map;
     int maxX, maxY;
