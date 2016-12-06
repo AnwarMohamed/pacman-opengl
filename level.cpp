@@ -7,7 +7,7 @@ Level::Level(char* map, int maxX, int maxY)
     level = 0;
 
     wall = new Wall(maxX, maxY);
-    food = new Food();
+    food = new Food(maxX, maxY);
 
     this->map = map;
     this->maxX = maxX;
@@ -53,10 +53,10 @@ void Level::draw(int pacmanX, int pacmanY)
 
             char pixel = *(map + (y * maxX) + x);
             
-            if (wall->isWall(pixel))
+            if (Wall::isWall(pixel))
                 wall->draw(pixel, x, y);
                 
-            else if (food->isFood(pixel))
+            else if (Food::isFood(pixel))
                 food->draw(pixel, x, y);
 
             glPopMatrix();
