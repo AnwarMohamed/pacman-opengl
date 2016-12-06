@@ -13,3 +13,4 @@ bin/ofMaker
 lib
 *.mk
 *.workspace.session
+*.sdf
