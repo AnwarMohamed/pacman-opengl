@@ -8,7 +8,12 @@ Food::~Food()
 {
 }
 
-void Food::draw(int x, int y)
+bool Food::isFood(char type)
+{
+    return type == 'f';
+}
+
+void Food::draw(char type, int x, int y)
 {
     glPushMatrix();
     glTranslatef(x + 5, y + 5, 0);

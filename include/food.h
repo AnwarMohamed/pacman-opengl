@@ -8,5 +8,6 @@ public:
     Food();
     ~Food();
 
-    void draw(int x, int y);
+    void draw(char type, int x, int y);
+    bool isFood(char type);
 };

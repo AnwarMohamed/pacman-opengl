@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/food.cpp.o ./Debug/maze.cpp.o ./Debug/pacman.cpp.o ./Debug/wall.cpp.o ./Debug/sounds.cpp.o ./Debug/images.cpp.o ./Debug/level.cpp.o ./Debug/bashful.cpp.o ./Debug/pokey.cpp.o ./Debug/shadow.cpp.o ./Debug/speedy.cpp.o
+./Debug/main.cpp.o ./Debug/food.cpp.o ./Debug/maze.cpp.o ./Debug/pacman.cpp.o ./Debug/wall.cpp.o ./Debug/sounds.cpp.o ./Debug/images.cpp.o ./Debug/level.cpp.o ./Debug/bashful.cpp.o ./Debug/pokey.cpp.o ./Debug/shadow.cpp.o ./Debug/speedy.cpp.o ./Debug/src_ghosts_ghost.cpp.o

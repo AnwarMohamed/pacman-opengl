@@ -22,7 +22,7 @@ public:
     void setSounds(Sounds* sounds);
     void setImages(Images* images);
 
-    void draw();
+    void draw(int pacmanX, int pacmanY);
 
 private:
     int level;

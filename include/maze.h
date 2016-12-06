@@ -11,8 +11,8 @@
 
 using namespace std;
 
-#define MAZE_MAX_X 21
-#define MAZE_MAX_Y 28
+#define MAZE_MAX_X 28
+#define MAZE_MAX_Y 36
 
 class Maze
 {

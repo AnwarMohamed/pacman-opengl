@@ -21,6 +21,7 @@
       <File Name="pokey.cpp"/>
       <File Name="shadow.cpp"/>
       <File Name="speedy.cpp"/>
+      <File Name="src/ghosts/ghost.cpp"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
@@ -37,6 +38,7 @@
       <File Name="include/pokey.h"/>
       <File Name="include/shadow.h"/>
       <File Name="include/speedy.h"/>
+      <File Name="include/ghost.h"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <Settings Type="Executable">
@@ -50,7 +52,7 @@
       <ResourceCompiler Options=""/>
     </GlobalSettings>
     <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+      <Compiler Options="-g;-O0;-Wall;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
         <IncludePath Value="include/"/>
         <IncludePath Value="/usr/include/GL/"/>

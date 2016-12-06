@@ -6,17 +6,24 @@ Level::Level(char* map, int maxX, int maxY)
     sounds = 0;
     level = 0;
 
-    wall = new Wall();
+    wall = new Wall(maxX, maxY);
     food = new Food();
 
     this->map = map;
     this->maxX = maxX;
     this->maxY = maxY;
 
-    bashful = new Bashful(0, 0);
-    pokey = new Pokey(0, 0);
-    shadow = new Shadow(0, 0);
-    speedy = new Speedy(0, 0);
+    shadow = new Shadow(15, 21);
+    shadow->setMap(map, maxX, maxY);
+    
+    pokey = new Pokey(14, 18);    
+    pokey->setMap(map, maxX, maxY);
+    
+    bashful = new Bashful(15, 18);
+    bashful->setMap(map, maxX, maxY);
+    
+    speedy = new Speedy(16, 18);
+    speedy->setMap(map, maxX, maxY);
 }
 
 void Level::prepare()
@@ -37,25 +44,29 @@ void Level::reset()
 {
 }
 
-void Level::draw()
+void Level::draw(int pacmanX, int pacmanY)
 {
     for (int y = 0; y < maxY; y++) {
         for (int x = 0; x < maxX; x++) {
 
             glPushMatrix();
 
-            switch (*(map + (y * maxX) + x)) {
-            case 'w':
-                wall->draw(x, y);
-                break;
-            case 'f':
-                food->draw(x, y);
-                break;
-            }
+            char pixel = *(map + (y * maxX) + x);
+            
+            if (wall->isWall(pixel))
+                wall->draw(pixel, x, y);
+                
+            else if (food->isFood(pixel))
+                food->draw(pixel, x, y);
 
             glPopMatrix();
         }
     }
+    
+    bashful->draw(pacmanX, pacmanY);
+    pokey->draw(pacmanX, pacmanY);
+    shadow->draw(pacmanX, pacmanY);
+    speedy->draw(pacmanX, pacmanY);
 }
 
 Level::~Level()

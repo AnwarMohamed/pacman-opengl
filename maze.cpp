@@ -58,7 +58,7 @@ void Maze::draw()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    level->draw();
+    level->draw(pacman->x, pacman->y);
     pacman->draw();
 }
 
