@@ -77,6 +77,7 @@
   <ItemGroup>
     <ClCompile Include="bashful.cpp" />
     <ClCompile Include="food.cpp" />
+    <ClCompile Include="ghost.cpp" />
     <ClCompile Include="images.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
