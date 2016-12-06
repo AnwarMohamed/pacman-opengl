@@ -10,8 +10,8 @@ using namespace std;
 
 Pacman::Pacman()
 {
-    x = 15;
-    y = 11;
+    x = 18;
+    y = 14;
 
     lives = 3;
     score = 0;
@@ -86,12 +86,10 @@ void Pacman::onMove(int key, int x, int y)
 
 void Pacman::update(char* map, int maxX, int maxY)
 {
-    int newX = getNextX(maxX, maxY) - 4;
+    int newX = getNextX(maxX, maxY) - 5;
     int newY = getNextY(maxX, maxY) - 4;
 
-    char type = *(map + (maxY - newY) * maxX + newX);
-
-    printf("x: %d y: %d t: %c\n", newX, newY, type);
+    char type = *(map + (maxY - newY) * maxX + newX);    
 
     move = true;
 
@@ -99,7 +97,7 @@ void Pacman::update(char* map, int maxX, int maxY)
         move = false;
 
     else if (Food::isFood(type)) {
-        *(map + (maxY - newY)* maxX + newX) = 'B';
+        *(map + (maxY - newY)* maxX + newX) = '_';
         score++;
     }
 
@@ -137,9 +135,9 @@ int Pacman::getNextY(int maxX, int maxY)
 {
     switch (direction) {
     case 1:
-        return maxY - y + 1;
+        return y + 1;
     case 3:
-        return maxY - y - 1;
+        return y - 1;
     default:
         return y;
     }
