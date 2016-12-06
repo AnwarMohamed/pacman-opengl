@@ -1,7 +1,7 @@
 ____________________________
 ____________________________
 ____________________________
-_bbbbbbbbbbbbuvbbbbbbbbbbbby
+zbbbbbbbbbbbbuvbbbbbbbbbbbby
 a____________he____________d
 a_lggk_lgggk_he_lgggk_lggk_d
 a_h__e_h___e_he_h___e_h__e_d
@@ -10,7 +10,7 @@ a__________________________d
 a_lggk_lk_lggggggk_lk_lggk_d
 a_jffi_he_jffopffi_he_jffi_d
 a______he____he____he______d
-_cccck_hnggk_he_lggme_lcccc_
+xcccck_hnggk_he_lggme_lccccw
 _____a_hpffi_ji_jffoe_d_____
 _____a_he__________he_d_____
 _____a_he_lcc__cck_he_d_____
@@ -20,7 +20,7 @@ ccccck_lk_d______a_lk_lccccc
 _____a_he_jbbbbbbi_he_d_____
 _____a_he__________he_d_____
 _____a_he_lggggggk_he_d_____
-xbbbbi_ji_jffopffi_ji_jbbbby
+zbbbbi_ji_jffopffi_ji_jbbbby
 a____________he____________d
 a_lggk_______he_______lggk_d
 a_jfoe_______ji_______hpfi_d
@@ -31,6 +31,6 @@ a______he____he____he______d
 a_lggggmnggk_he_lggmnggggk_d
 a_jffffffffi_ji_jffffffffi_d
 a__________________________d
-_cccccccccccccccccccccccccc_
+xccccccccccccccccccccccccccw
 ____________________________
 ____________________________

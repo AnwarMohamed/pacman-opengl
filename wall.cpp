@@ -441,6 +441,20 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.2, maxY - y + 3.5 + 0.4);
         glEnd();
 
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.9, maxY - y + 3.5 + 0.7);
+        glVertex2f(x + 4.5 + 0.9, maxY - y + 3.5 + 1.5);
+        glEnd();
+
+        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.7, 1.5 * PI, 0.5 * PI, 300);
+
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 - 0.5, maxY - y + 3.5 + 0.1);
+        glVertex2f(x + 4.5 + 0.2, maxY - y + 3.5 + 0.1);
+        glEnd();
+
         break;
     case WALL_X:
 
@@ -456,6 +470,21 @@ void Wall::draw(char type, int x, int y)
         glBegin(GL_LINES);
         glVertex2f(x + 4.5 + 0.8, maxY - y + 3.5 + 0.4);
         glVertex2f(x + 4.5 + 1, maxY - y + 3.5 + 0.4);
+        glEnd();
+
+
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 0.1);
+        glVertex2f(x + 4.5 + 1.0, maxY - y + 3.5 + 0.1);
+        glEnd();
+
+        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.7, PI, 0.5 * PI, 300);
+
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.1, maxY - y + 3.5 + 0.6);
+        glVertex2f(x + 4.5 + 0.1, maxY - y + 3.5 + 1.0);
         glEnd();
 
         break;
@@ -476,8 +505,51 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.2, maxY - y + 3.5 + 0.6);
         glEnd();
 
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.9, maxY - y + 3.5);
+        glVertex2f(x + 4.5 + 0.9, maxY - y + 3.5 + 0.2);
+        glEnd();
+
+        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.7, 0, 0.5 * PI, 300);
+
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5, maxY - y + 3.5 + 0.9);
+        glVertex2f(x + 4.5 + 0.2, maxY - y + 3.5 + 0.9);
+        glEnd();
+
         break;
     case WALL_Z:
+    
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5);
+        glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 0.2);
+        glEnd();
+
+        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
+
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.8, maxY - y + 3.5 + 0.6);
+        glVertex2f(x + 4.5 + 1, maxY - y + 3.5 + 0.6);
+        glEnd();
+    
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.1, maxY - y + 3.5);
+        glVertex2f(x + 4.5 + 0.1, maxY - y + 3.5 + 0.2);
+        glEnd();
+
+        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.7, 0.5 * PI, 0.5 * PI, 300);
+
+        glLineWidth(2.0);
+        glBegin(GL_LINES);
+        glVertex2f(x + 4.5 + 0.8, maxY - y + 3.5 + 0.9);
+        glVertex2f(x + 4.5 + 1, maxY - y + 3.5 + 0.9);
+        glEnd();    
+    
         break;
     }
 

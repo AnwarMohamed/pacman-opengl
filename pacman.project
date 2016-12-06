@@ -21,7 +21,7 @@
       <File Name="pokey.cpp"/>
       <File Name="shadow.cpp"/>
       <File Name="speedy.cpp"/>
-      <File Name="src/ghosts/ghost.cpp"/>
+      <File Name="ghost.cpp"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
