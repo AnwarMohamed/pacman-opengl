@@ -29,11 +29,12 @@ void Food::draw(char type, int x, int y)
 
     switch (type) {
     case FOOD_A:
+        glutSolidSphere(0.15, 10, 10);
         break;
     case FOOD_B:
+        glutSolidSphere(0.4, 30, 30);
         break;
     }
 
-    glutSolidSphere(0.15, 20, 20);
     glPopMatrix();
 }
