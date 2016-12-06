@@ -42,7 +42,7 @@ public:
     ~Wall();
 
     void draw(char type, int x, int y);
-    bool isWall(char type);
+    static bool isWall(char type);
 
 private:
     int maxX, maxY;
