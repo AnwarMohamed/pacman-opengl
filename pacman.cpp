@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <iostream>
 #include <math.h>
+#include "wall.h"
+#include "food.h"
 
 using namespace std;
 
@@ -13,7 +15,7 @@ Pacman::Pacman()
 
     lives = 3;
     score = 0;
-    direction = -1;    
+    direction = -1;
 
     //    int width, height;
     //    unsigned char* image = SOIL_load_image("../media/pacman.png", &width, &height, 0, SOIL_LOAD_RGB);
@@ -84,19 +86,21 @@ void Pacman::onMove(int key, int x, int y)
 
 void Pacman::update(char* map, int maxX, int maxY)
 {
-    int newX = getNextX() - 5;
-    int newY = getNextY() - 5;
+    int newX = getNextX(maxX, maxY) - 4;
+    int newY = getNextY(maxX, maxY) - 4;
+
+    char type = *(map + (maxY - newY) * maxX + newX);
+
+    printf("x: %d y: %d t: %c\n", newX, newY, type);
 
     move = true;
 
-    switch (*(map + newY * maxX + newX)) {
-    case 'w':
+    if (Wall::isWall(type))
         move = false;
-        break;
-    case 'f':
-        *(map + newY* maxX + newX) = '0';
+
+    else if (Food::isFood(type)) {
+        *(map + (maxY - newY)* maxX + newX) = 'B';
         score++;
-        break;
     }
 
     if (move) {
@@ -117,7 +121,7 @@ void Pacman::update(char* map, int maxX, int maxY)
     }
 }
 
-int Pacman::getNextX()
+int Pacman::getNextX(int maxX, int maxY)
 {
     switch (direction) {
     case 0:
@@ -129,13 +133,13 @@ int Pacman::getNextX()
     }
 }
 
-int Pacman::getNextY()
+int Pacman::getNextY(int maxX, int maxY)
 {
     switch (direction) {
     case 1:
-        return y + 1;
+        return maxY - y + 1;
     case 3:
-        return y - 1;
+        return maxY - y - 1;
     default:
         return y;
     }
