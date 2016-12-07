@@ -15,7 +15,7 @@ void Pokey::draw(int pacmanX, int pacmanY)
     glPushMatrix();
     glTranslatef(x, y, 0);
     glColor4f(POKEY_RED, POKEY_GREEN, POKEY_BLUE, 0);
-    glutSolidSphere(0.4, 20, 20);
+    glutSolidSphere(0.7, 20, 20);
     glPopMatrix();
 }
 

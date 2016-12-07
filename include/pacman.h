@@ -8,7 +8,7 @@
 class Pacman
 {
 public:
-    Pacman();
+    Pacman(int maxX, int maxY);
     ~Pacman();
 
     int x, y;
@@ -32,4 +32,6 @@ private:
     GLuint texture;
     Sounds* sounds;
     Images* images;
+    
+    int maxX, maxY;
 };

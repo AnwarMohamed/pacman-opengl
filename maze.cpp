@@ -10,7 +10,7 @@ Maze::Maze()
     sounds = new Sounds();
     images = new Images();
 
-    pacman = new Pacman();
+    pacman = new Pacman(MAZE_MAX_X, MAZE_MAX_Y);
     pacman->setImages(images);
     pacman->setSounds(sounds);
 
@@ -19,6 +19,7 @@ Maze::Maze()
     level = new Level(map, MAZE_MAX_X, MAZE_MAX_Y);
     level->setImages(images);
     level->setSounds(sounds);
+    level->setPacman(pacman);
 }
 
 bool Maze::load(string path)

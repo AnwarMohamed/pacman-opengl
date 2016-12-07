@@ -23,11 +23,16 @@ protected:
     int x, y, step;
     int maxX, maxY;
     char* map;
+    GLuint texture;
+    
 	int direction;
 	bool move_Ghost;
 
+    void loadTexture(string path);
     bool canMove(int direction);
+    
     virtual void move(int x, int y);
+    
 	int getNextX();
 	int getNextY();
 

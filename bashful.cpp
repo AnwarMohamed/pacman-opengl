@@ -15,7 +15,7 @@ void Bashful::draw(int pacmanX, int pacmanY)
     glPushMatrix();
     glTranslatef(x, y, 0);
     glColor4f(BASHFUL_RED, BASHFUL_GREEN, BASHFUL_BLUE, 0);
-    glutSolidSphere(0.4, 20, 20);
+    glutSolidSphere(0.7, 20, 20);
     glPopMatrix();
 }
 

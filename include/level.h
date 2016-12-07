@@ -9,6 +9,7 @@
 #include "pokey.h"
 #include "shadow.h"
 #include "speedy.h"
+#include "pacman.h"
 
 class Level
 {
@@ -21,6 +22,7 @@ public:
 
     void setSounds(Sounds* sounds);
     void setImages(Images* images);
+    void setPacman(Pacman* pacman);
 
     void draw(int pacmanX, int pacmanY);
 
@@ -40,6 +42,9 @@ private:
 
     Sounds* sounds;
     Images* images;
-    
+    Pacman* pacman;
+
     void prepare();
+    void drawLives();
+    void drawScore();
 };

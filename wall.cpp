@@ -157,7 +157,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.2, 1.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.2, 1.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -174,7 +174,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.2, PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.2, PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -191,7 +191,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.2, 0, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.2, 0, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -208,7 +208,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.2, 0.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.2, 0.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -226,7 +226,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.4, 1.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.4, 1.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -243,7 +243,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.4, PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.4, PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -260,7 +260,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -277,7 +277,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -295,7 +295,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.4, 1.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.4, 1.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -318,7 +318,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -341,7 +341,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.4, PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.4, PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -364,7 +364,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -387,7 +387,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -410,7 +410,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -433,7 +433,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.4, 1.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.4, 1.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -447,7 +447,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.9, maxY - y + 3.5 + 1.5);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.7, 1.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.2, 0.7, 1.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -464,7 +464,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 1.0);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.4, PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.4, PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -479,7 +479,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 1.0, maxY - y + 3.5 + 0.1);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.7, PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.2, 0.7, PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -497,7 +497,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.6, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.4, 0, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -511,7 +511,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.9, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.7, 0, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.2, maxY - y + 4.5 - 0.8, 0.7, 0, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -528,7 +528,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.4, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.4, 0.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -542,7 +542,7 @@ void Wall::draw(char type, int x, int y)
         glVertex2f(x + 4.5 + 0.1, maxY - y + 3.5 + 0.2);
         glEnd();
 
-        drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.7, 0.5 * PI, 0.5 * PI, 300);
+        Images::drawArc(x + 4.5 + 0.8, maxY - y + 4.5 - 0.8, 0.7, 0.5 * PI, 0.5 * PI, 300);
 
         glLineWidth(2.0);
         glBegin(GL_LINES);
@@ -555,29 +555,4 @@ void Wall::draw(char type, int x, int y)
 
     glLineWidth(1.0);
     glPopMatrix();
-}
-
-void Wall::drawArc(float cx, float cy, float r, float start_angle, float arc_angle, int num_segments)
-{
-    float theta = arc_angle / float(num_segments - 1);
-    float tangetial_factor = tanf(theta);
-    float radial_factor = cosf(theta);
-
-    float x = r * cosf(start_angle);
-    float y = r * sinf(start_angle);
-
-    glBegin(GL_LINE_STRIP);
-    for (int ii = 0; ii < num_segments; ii++) {
-        glVertex2f(x + cx, y + cy);
-
-        float tx = -y;
-        float ty = x;
-
-        x += tx * tangetial_factor;
-        y += ty * tangetial_factor;
-
-        x *= radial_factor;
-        y *= radial_factor;
-    }
-    glEnd();
 }

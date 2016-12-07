@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Pacman::Pacman()
+Pacman::Pacman(int maxX, int maxY)
 {
     x = 18;
     y = 14;
@@ -16,6 +16,9 @@ Pacman::Pacman()
     lives = 3;
     score = 0;
     direction = -1;
+
+    this->maxX = maxX;
+    this->maxY = maxY;
 
     //    int width, height;
     //    unsigned char* image = SOIL_load_image("../media/pacman.png", &width, &height, 0, SOIL_LOAD_RGB);
@@ -46,13 +49,31 @@ Pacman::~Pacman()
 void Pacman::draw()
 {
     glPushMatrix();
-    glTranslatef(x, y, 0);
     glColor4f(1, 1, 0, 0);
-    glutSolidSphere(0.4, 20, 20);
+    glTranslatef(x, y, 0);
+    glutSolidSphere(0.7, 20, 20);
 
-    //    glEnable(GL_TEXTURE_2D);
-    //    glBindTexture(GL_TEXTURE_2D, texture);
-    //    glDisable(GL_TEXTURE_2D);
+    if (direction >= 0) {
+        //        glColor4f(0, 0, 0, 0);
+        //        Images::drawArc(0, 0, 0.7, (1.25 - (direction * 0.5)) * PI, 1.5 * PI, 300);
+
+        //        int i;
+        //        int triangleAmount = 20; //# of triangles used to draw circle
+        //
+        //        // GLfloat radius = 0.8f; //radius
+        //        GLfloat twicePi = 1.0f * PI;
+        //
+        //        glBegin(GL_TRIANGLE_FAN);
+        //        glVertex2f(maxX - x, maxY - y); // center of circle
+        //        for (i = 0; i <= triangleAmount; i++) {
+        //            glVertex2f(maxX - x + (0.7 * cos(i * twicePi / triangleAmount)),
+        //                       maxY - y + (0.7 * sin(i * twicePi / triangleAmount)));
+        //        }
+        //        glEnd();
+    }
+
+    cout << direction << endl;
+
     glPopMatrix();
 }
 
@@ -96,18 +117,18 @@ void Pacman::update(char* map, int maxX, int maxY)
     if (x <= 5 && direction == 0) {
         x = 32;
         move = false;
-        
+
     } else if (x >= 32 && direction == 2) {
         x = 5;
         move = false;
-        
+
     } else if (Wall::isWall(type))
         move = false;
 
     else if (Food::isFood(type)) {
         *(map + (maxY - newY)* maxX + newX) = '_';
         score++;
-    }    
+    }
 
     if (move) {
         switch (direction) {

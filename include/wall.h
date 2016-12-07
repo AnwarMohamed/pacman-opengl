@@ -1,8 +1,7 @@
 #pragma once
 
 #include "glut_header.h"
-
-#define PI 3.1415926f
+#include "images.h"
 
 #define WALL_A 'a'
 #define WALL_B 'b'
@@ -42,9 +41,8 @@ public:
     ~Wall();
 
     void draw(char type, int x, int y);
-    static bool isWall(char type);
-
+    
+    static bool isWall(char type);    
 private:
-    int maxX, maxY;
-    void drawArc(float cx, float cy, float r, float start_angle, float arc_angle, int num_segments);
+    int maxX, maxY;    
 };

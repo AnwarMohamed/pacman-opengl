@@ -1,4 +1,5 @@
 #include "level.h"
+#include <cstdlib>
 
 Level::Level(char* map, int maxX, int maxY)
 {
@@ -13,16 +14,16 @@ Level::Level(char* map, int maxX, int maxY)
     this->maxX = maxX;
     this->maxY = maxY;
 
-    shadow = new Shadow(15, 21);
+    shadow = new Shadow(15, maxY - 22);
     shadow->setMap(map, maxX, maxY);
-    
-    pokey = new Pokey(14, 18);    
+
+    pokey = new Pokey(14, 23);
     pokey->setMap(map, maxX, maxY);
-    
-    bashful = new Bashful(15, 18);
+
+    bashful = new Bashful(15, 23);
     bashful->setMap(map, maxX, maxY);
-    
-    speedy = new Speedy(18,14);
+
+    speedy = new Speedy(18, 23);
     speedy->setMap(map, maxX, maxY);
 }
 
@@ -40,6 +41,11 @@ void Level::setSounds(Sounds* sounds)
     this->sounds = sounds;
 }
 
+void Level::setPacman(Pacman* pacman)
+{
+    this->pacman = pacman;
+}
+
 void Level::reset()
 {
 }
@@ -52,21 +58,48 @@ void Level::draw(int pacmanX, int pacmanY)
             glPushMatrix();
 
             char pixel = *(map + (y * maxX) + x);
-            
+
             if (Wall::isWall(pixel))
                 wall->draw(pixel, x, y);
-                
+
             else if (Food::isFood(pixel))
                 food->draw(pixel, x, y);
 
             glPopMatrix();
         }
     }
-    
+
     bashful->draw(pacmanX, pacmanY);
     pokey->draw(pacmanX, pacmanY);
     shadow->draw(pacmanX, pacmanY);
     speedy->draw(pacmanX, pacmanY);
+
+    glPushMatrix();
+
+    drawLives();
+    drawScore();
+
+    glPopMatrix();
+}
+
+void Level::drawScore()
+{
+    glColor4f(0.0f, 0.0f, 1.0f, 0.0f);
+    glRasterPos2i(5, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"SCORE");
+
+    glRasterPos2i(8, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)itoa());
+}
+
+void Level::drawLives()
+{
+    glColor4f(0.0f, 0.0f, 1.0f, 0.0f);
+    glRasterPos2i(5, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"LEVEL");
+
+    glRasterPos2i(8, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"5");
 }
 
 Level::~Level()

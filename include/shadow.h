@@ -16,5 +16,5 @@ public:
     void draw(int pacmanX, int pacmanY) override;
 
 private:
-    void move(int x, int y) override;
+    void move(int x, int y) override;    
 };
