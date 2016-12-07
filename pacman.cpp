@@ -127,7 +127,8 @@ void Pacman::update(char* map, int maxX, int maxY)
 
     else if (Food::isFood(type)) {
         *(map + (maxY - newY)* maxX + newX) = '_';
-        score++;
+        
+        score += type == FOOD_A ? 1: 5;
     }
 
     if (move) {

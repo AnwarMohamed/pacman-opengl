@@ -47,4 +47,6 @@ private:
     void prepare();
     void drawLives();
     void drawScore();
+    void drawLevels();
+    void drawPacman();
 };

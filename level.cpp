@@ -78,28 +78,51 @@ void Level::draw(int pacmanX, int pacmanY)
 
     drawLives();
     drawScore();
+    drawLevels();
+    drawPacman();
 
     glPopMatrix();
 }
 
+#define DRAW_RED 0.9647058823529412
+#define DRAW_GREEN 0.6352941176470588
+#define DRAW_BLUE 0.11372549019607843
+
+void Level::drawPacman()
+{
+    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+    glRasterPos2i(5, 39);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"PACMAN");
+}
+
 void Level::drawScore()
 {
-    glColor4f(0.0f, 0.0f, 1.0f, 0.0f);
+    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
     glRasterPos2i(5, 5);
     glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"SCORE");
 
-    glRasterPos2i(8, 5);
-    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)itoa());
+    glRasterPos2i(9, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(pacman->score - 1).c_str());
 }
 
 void Level::drawLives()
 {
-    glColor4f(0.0f, 0.0f, 1.0f, 0.0f);
-    glRasterPos2i(5, 5);
+    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+    glRasterPos2i(27, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"LIVES");
+
+    glRasterPos2i(31, 5);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(pacman->lives).c_str());
+}
+
+void Level::drawLevels()
+{
+    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+    glRasterPos2i(27, 39);
     glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"LEVEL");
 
-    glRasterPos2i(8, 5);
-    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"5");
+    glRasterPos2i(31, 39);
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(level + 1).c_str());
 }
 
 Level::~Level()
