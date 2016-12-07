@@ -14,16 +14,16 @@ Level::Level(char* map, int maxX, int maxY)
     this->maxX = maxX;
     this->maxY = maxY;
 
-    shadow = new Shadow(15, maxY - 22);
+    shadow = new Shadow(20, 23);
     shadow->setMap(map, maxX, maxY);
 
-    pokey = new Pokey(14, 23);
+    pokey = new Pokey(19, 23);
     pokey->setMap(map, maxX, maxY);
 
-    bashful = new Bashful(15, 23);
+    bashful = new Bashful(17, 23);
     bashful->setMap(map, maxX, maxY);
 
-    speedy = new Speedy(18, 23);
+    speedy = new Speedy(18, 25);
     speedy->setMap(map, maxX, maxY);
 }
 
@@ -68,6 +68,36 @@ void Level::draw(int pacmanX, int pacmanY)
             glPopMatrix();
         }
     }
+	if (pacman->score < 262)
+	{
+		level = 0;
+	}
+	else if (pacman->score < 524)
+	{
+		level = 1;
+	}else if (pacman->score < 786)
+	{
+		level = 2;
+	}	else if (pacman->score < 1048)
+	{
+		level = 3;
+	}
+
+	switch (level)
+	{
+	case 0:
+		shadow->is_moving = true;
+		break;
+	case 1:
+		speedy->is_moving = true;
+		break;
+	case 2:
+		pokey->is_moving = true;
+		break;
+	case 3:
+		bashful->is_moving = true;
+		break;
+	}
 
     bashful->draw(pacmanX, pacmanY);
     pokey->draw(pacmanX, pacmanY);
@@ -75,6 +105,21 @@ void Level::draw(int pacmanX, int pacmanY)
     speedy->draw(pacmanX, pacmanY);
 
     glPushMatrix();
+	if (speedy->flag_collision == 1)
+	{
+		pacman->x = 18;
+		pacman->y = 14;
+		speedy->flag_collision = 0;
+		pacman->lives--;
+	}
+	if (shadow->flag_collision == 1)
+	{
+		pacman->x = 18;
+		pacman->y = 14;
+		speedy->flag_collision = 0;
+		pacman->lives--;
+	}
+	cout << "lives: " << pacman->lives << endl;
 
     drawLives();
     drawScore();
@@ -90,39 +135,39 @@ void Level::draw(int pacmanX, int pacmanY)
 
 void Level::drawPacman()
 {
-    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+    /*glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
     glRasterPos2i(5, 39);
-    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"PACMAN");
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"PACMAN");*/
 }
 
 void Level::drawScore()
 {
-    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+    /*glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
     glRasterPos2i(5, 5);
     glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"SCORE");
 
     glRasterPos2i(9, 5);
-    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(pacman->score - 1).c_str());
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(pacman->score - 1).c_str());*/
 }
 
 void Level::drawLives()
 {
-    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+   /* glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
     glRasterPos2i(27, 5);
     glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"LIVES");
 
     glRasterPos2i(31, 5);
-    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(pacman->lives).c_str());
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(pacman->lives).c_str());*/
 }
 
 void Level::drawLevels()
 {
-    glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
+    /*glColor4f(DRAW_RED, DRAW_GREEN, DRAW_BLUE, 0.0f);
     glRasterPos2i(27, 39);
     glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)"LEVEL");
 
     glRasterPos2i(31, 39);
-    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(level + 1).c_str());
+    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (const unsigned char*)to_string(level + 1).c_str());*/
 }
 
 Level::~Level()
