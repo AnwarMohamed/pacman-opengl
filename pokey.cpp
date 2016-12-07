@@ -10,7 +10,7 @@ Pokey::~Pokey()
 
 void Pokey::draw(int pacmanX, int pacmanY)
 {
-    move(pacmanX, pacmanY);
+    Ghost::move(pacmanX, pacmanY);
 
     glPushMatrix();
     glTranslatef(x, y, 0);

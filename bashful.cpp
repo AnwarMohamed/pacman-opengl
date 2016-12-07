@@ -10,7 +10,7 @@ Bashful::~Bashful()
 
 void Bashful::draw(int pacmanX, int pacmanY)
 {
-    move(pacmanX, pacmanY);
+    Ghost::move(pacmanX, pacmanY);
 
     glPushMatrix();
     glTranslatef(x, y, 0);
