@@ -18,6 +18,9 @@ public:
 
     virtual void draw( int pacmanX, int pacmanY);
     void setMap(char* map, int maxX, int maxY);
+    
+    bool is_moving;
+    bool was_hit;
 
 protected:
     int x, y, step;
