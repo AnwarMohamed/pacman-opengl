@@ -42,6 +42,36 @@ void Ghost::draw(int pacmanX, int pacmanY)
 
 void Ghost::move(int pacmanX, int pacmanY)
 {
+    direction = (rand() % 4);
+    int newX = getNextX() - 5;
+    int newY = getNextY() - 4;
+
+    move_Ghost = true;
+    char type = *(map + (maxY - newY) * maxX + newX);
+
+    if (Wall::isWall(type))
+        move_Ghost = false;
+
+    if (x == pacmanX && y == pacmanY) {
+        // ama yet2ablo
+    }
+
+    if (move_Ghost) {
+        switch (direction) {
+        case 0:
+            x -= 1;
+            break;
+        case 1:
+            y += 1;
+            break;
+        case 2:
+            x += 1;
+            break;
+        case 3:
+            y -= 1;
+            break;
+        }
+    }
 }
 
 int Ghost::getNextX()
