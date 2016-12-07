@@ -22,7 +22,7 @@ Level::Level(char* map, int maxX, int maxY)
     bashful = new Bashful(15, 18);
     bashful->setMap(map, maxX, maxY);
     
-    speedy = new Speedy(16, 18);
+    speedy = new Speedy(18,14);
     speedy->setMap(map, maxX, maxY);
 }
 

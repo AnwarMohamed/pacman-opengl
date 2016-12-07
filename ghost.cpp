@@ -6,6 +6,8 @@ Ghost::Ghost(int x, int y)
     this->y = y;
 
     step = 1;
+	direction = 0;
+
 }
 
 Ghost::~Ghost()
@@ -14,15 +16,15 @@ Ghost::~Ghost()
 
 bool Ghost::canMove(int direction)
 {
-    switch (direction) {
-    case DIRECTION_UP:
-        return *(map + (y - step) * maxY + x) != 'w';
-    case DIRECTION_RIGHT:
-        return *(map + y * maxY + x + step) != 'w';
-    case DIRECTION_DOWN:
-        return *(map + (y + step) * maxY + x) != 'w';
-    case DIRECTION_LEFT:
-        return *(map + y * maxY + x - step) != 'w';
+	switch (direction) {
+    case 1:
+        return Wall::isWall(*(map + (maxY -y - step) * maxY + x));
+    case 2:
+		return Wall::isWall(*(map + (maxY - y) * maxY + x + step));
+    case 3:
+		return Wall::isWall(*(map + (maxY - y + step) * maxY + x));
+    case 0:
+		return Wall::isWall(*(map + (maxY - y) * maxY + x - step));
     default:
         return false;
     }
@@ -41,4 +43,28 @@ void Ghost::draw(int pacmanX, int pacmanY)
 
 void Ghost::move(int pacmanX, int pacmanY)
 {
+}
+
+int Ghost::getNextX()
+{
+	switch (direction) {
+	case 0:
+		return x - 1;
+	case 2:
+		return x + 1;
+	default:
+		return x;
+	}
+}
+
+int Ghost::getNextY()
+{
+	switch (direction) {
+	case 1:
+		return y + 1;
+	case 3:
+		return y - 1;
+	default:
+		return y;
+	}
 }

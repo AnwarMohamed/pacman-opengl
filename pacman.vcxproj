@@ -92,6 +92,7 @@
   <ItemGroup>
     <ClInclude Include="include\bashful.h" />
     <ClInclude Include="include\food.h" />
+    <ClInclude Include="include\ghost.h" />
     <ClInclude Include="include\glut_header.h" />
     <ClInclude Include="include\images.h" />
     <ClInclude Include="include\level.h" />

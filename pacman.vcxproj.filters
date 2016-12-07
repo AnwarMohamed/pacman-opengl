@@ -92,5 +92,8 @@
     <ClInclude Include="include\wall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\ghost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
