@@ -89,17 +89,25 @@ void Pacman::update(char* map, int maxX, int maxY)
     int newX = getNextX(maxX, maxY) - 5;
     int newY = getNextY(maxX, maxY) - 4;
 
-    char type = *(map + (maxY - newY) * maxX + newX);    
+    char type = *(map + (maxY - newY) * maxX + newX);
 
     move = true;
 
-    if (Wall::isWall(type))
+    if (x <= 5 && direction == 0) {
+        x = 32;
+        move = false;
+        
+    } else if (x >= 32 && direction == 2) {
+        x = 5;
+        move = false;
+        
+    } else if (Wall::isWall(type))
         move = false;
 
     else if (Food::isFood(type)) {
         *(map + (maxY - newY)* maxX + newX) = '_';
         score++;
-    }
+    }    
 
     if (move) {
         switch (direction) {
