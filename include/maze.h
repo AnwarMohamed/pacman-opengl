@@ -22,20 +22,20 @@ public:
 
     bool load(string path);
     bool reset();
-    
+
     void draw();
-    void update();    
+    void update();
 
     void onMove(int key, int x, int y);
-    
-private:
-    Pacman* pacman;    
-    Level* level;    
-    
+
+public:
+    Pacman* pacman;
+    Level* level;
+
     char* map;
     ifstream mapFile;
     string mapPath;
-    
+
     Sounds* sounds;
     Images* images;
 };

@@ -1,5 +1,6 @@
 #include "level.h"
 #include <cstdlib>
+#include <fstream>
 
 Level::Level(char* map, int maxX, int maxY)
 {
@@ -14,16 +15,16 @@ Level::Level(char* map, int maxX, int maxY)
     this->maxX = maxX;
     this->maxY = maxY;
 
-    shadow = new Shadow(15, maxY - 22);
+    shadow = new Shadow(20, 23);
     shadow->setMap(map, maxX, maxY);
 
-    pokey = new Pokey(14, 23);
+    pokey = new Pokey(19, 23);
     pokey->setMap(map, maxX, maxY);
 
-    bashful = new Bashful(15, 23);
+    bashful = new Bashful(17, 23);
     bashful->setMap(map, maxX, maxY);
 
-    speedy = new Speedy(18, 23);
+    speedy = new Speedy(18, 25);
     speedy->setMap(map, maxX, maxY);
 }
 
@@ -44,6 +45,26 @@ void Level::setSounds(Sounds* sounds)
 void Level::setPacman(Pacman* pacman)
 {
     this->pacman = pacman;
+}
+
+// void Level::setMaze(Maze* maze)
+//{
+//    this->maze = maze;
+//}
+
+void Level::reset2()
+{
+    ifstream mapFile;
+    mapFile.open("../maze.txt");
+
+    if (!mapFile.is_open())
+        return;
+
+    for (int y = 0; y < maxY; y++)
+        for (int x = 0; x < maxX; x++)
+            mapFile >> *(map + (y * maxX) + x);
+
+    mapFile.close();
 }
 
 void Level::reset()
@@ -68,6 +89,26 @@ void Level::draw(int pacmanX, int pacmanY)
             glPopMatrix();
         }
     }
+    if (pacman->score == 262) {
+        level += 1;        
+        pacman->score = 0;
+        reset2();
+    }
+
+    switch (level) {
+    case 0:
+        shadow->is_moving = true;
+        break;
+    case 1:
+        speedy->is_moving = true;
+        break;
+    case 2:
+        pokey->is_moving = true;
+        break;
+    case 3:
+        bashful->is_moving = true;
+        break;
+    }
 
     bashful->draw(pacmanX, pacmanY);
     pokey->draw(pacmanX, pacmanY);
@@ -75,6 +116,36 @@ void Level::draw(int pacmanX, int pacmanY)
     speedy->draw(pacmanX, pacmanY);
 
     glPushMatrix();
+
+    if (speedy->was_hit == 1) {
+        pacman->x = 18;
+        pacman->y = 14;
+        speedy->was_hit = 0;
+        pacman->lives--;
+    }
+
+    if (shadow->was_hit == 1) {
+        pacman->x = 18;
+        pacman->y = 14;
+        shadow->was_hit = 0;
+        pacman->lives--;
+    }
+
+    if (pokey->was_hit == 1) {
+        pacman->x = 18;
+        pacman->y = 14;
+        pokey->was_hit = 0;
+        pacman->lives--;
+    }
+
+    if (bashful->was_hit == 1) {
+        pacman->x = 18;
+        pacman->y = 14;
+        bashful->was_hit = 0;
+        pacman->lives--;
+    }
+
+    cout << "lives: " << pacman->lives << endl;
 
     drawLives();
     drawScore();

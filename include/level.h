@@ -1,5 +1,6 @@
 #pragma once
 
+//#include "maze.h"
 #include "sounds.h"
 #include "images.h"
 #include "food.h"
@@ -23,6 +24,7 @@ public:
     void setSounds(Sounds* sounds);
     void setImages(Images* images);
     void setPacman(Pacman* pacman);
+//    void setMaze(Maze* maze);
 
     void draw(int pacmanX, int pacmanY);
 
@@ -43,10 +45,13 @@ private:
     Sounds* sounds;
     Images* images;
     Pacman* pacman;
+//    Maze* maze;
 
     void prepare();
     void drawLives();
     void drawScore();
     void drawLevels();
     void drawPacman();
+    
+    void reset2();
 };

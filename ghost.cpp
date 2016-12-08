@@ -57,7 +57,7 @@ void Ghost::move(int pacmanX, int pacmanY)
             move_Ghost = false;
 
         if (x == pacmanX && y == pacmanY) {
-            // ama yet2ablo
+            was_hit = true;
         }
 
         if (move_Ghost) {

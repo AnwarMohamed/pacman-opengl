@@ -20,11 +20,13 @@ Maze::Maze()
     level->setImages(images);
     level->setSounds(sounds);
     level->setPacman(pacman);
+//    level->setMaze(this);
 }
 
 bool Maze::load(string path)
 {
     mapPath = path;
+//    level->setMaze(this);
     return reset();
 }
 
